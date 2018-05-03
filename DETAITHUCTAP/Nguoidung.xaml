@@ -1,0 +1,87 @@
+﻿<Window x:Class="DETAITHUCTAP.Nguoidung"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DETAITHUCTAP"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="Thông Tin Người Dùng"   VerticalAlignment="Center" Height="750" Width="1170" >
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1105*"/>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto" MinHeight="435"/>
+        </Grid.RowDefinitions>
+
+
+        <Expander Name="expNguoiDung" Header="Thông tin Người Dùng"  Margin="0,10,0,0" FontFamily="Comic Sans MS" Foreground="Black" Width="auto"  Cursor="Hand" Height="auto" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="4" >
+            <TabControl Height="171" >
+                <TabItem Header="Thông tin chung" Height="26" VerticalAlignment="Top" Margin="0" HorizontalAlignment="Left" Width="225">
+                    <Grid Margin="10,10,78,-59">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="22*"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="245*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="0,12,1,0" HorizontalAlignment="Right" Text="Mã Người Dùng" VerticalAlignment="Top" RenderTransformOrigin="0.694,0.706" Height="17" Width="85" />
+                        <TextBox MaxLength="7" Width="185" Margin="1,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtMaNguoidung" Height="27" Grid.Column="3" />
+                        <TextBlock Margin="19,40,0,0" HorizontalAlignment="Left" Text="Họ Tên:" VerticalAlignment="Top" Height="17" Width="44" />
+                        <TextBox MaxLength="50" Width="185" Margin="1,32,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtHoTen" Tag="HoTen" Height="25" Grid.Column="3" />
+                        <RadioButton x:Name="rbNamDK" Content="Nam" HorizontalAlignment="Left" Margin="387,87,0,0" VerticalAlignment="Top" Grid.Column="3" Height="25" Width="77" RenderTransformOrigin="0.5,0.5">
+                        </RadioButton>
+                        <RadioButton x:Name="rbNuDK" Content="Nữ" HorizontalAlignment="Left" Margin="321,87,0,0" VerticalAlignment="Top" Grid.Column="3" Height="25" Width="43" RenderTransformOrigin="0.5,0.5">
+                        </RadioButton>
+                        <Label Content="Giới tính:" HorizontalAlignment="Left" Margin="219,78,0,0" VerticalAlignment="Top" Width="72" Grid.Column="3" Height="34" RenderTransformOrigin="0.5,0.5"/>
+                        <TextBlock Margin="219,19,0,0" HorizontalAlignment="Left" Text="Mật Khẩu:" VerticalAlignment="Top" Height="17" Width="83" Grid.Column="3" />
+                        <TextBox MaxLength="50" Width="156" Margin="321,15,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtMatkhau" Tag="HoTen" Height="25" Grid.Column="3" />
+                        <TextBlock Margin="19,81,0,0" HorizontalAlignment="Left" Text="Quyền" VerticalAlignment="Top" Height="17" Width="44" />
+                        <TextBox MaxLength="50" Width="185" Margin="0,73,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtquyen" Tag="HoTen" Height="25" Grid.Column="3" />
+
+
+
+
+                        <TextBlock Margin="219,48,0,0" HorizontalAlignment="Left" Text="Ngày Sinh" VerticalAlignment="Top" Grid.Column="3" Width="83" Height="17" />
+                        <DatePicker  Width="156" HorizontalAlignment="Left" Margin="321,40,0,0" VerticalAlignment="Top" Name="txtNgaySinh" Height="25" Grid.Column="3" RenderTransformOrigin="0.515,1.24" />
+                        <Button Name="btnthem" Background="#222930" Foreground="#E9E9E9" Margin="0,51,251,0" Height="25" Width="80" Content="Thêm" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="3" Click="btnthem_Click" />
+                        <Button Name="btnsua" Background="#222930" Foreground="#E9E9E9" Margin="0,50,141,0" Height="25" Width="80" Content="Sửa" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="3" Click="bntsua" />
+                        <Button Name="btnxoa" Background="#222930" Foreground="#E9E9E9" Margin="0,50,10,0" Height="25" Width="80" Content="Xóa" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="3" Click="bntxoa" />
+
+
+
+                    </Grid>
+
+                </TabItem>
+
+
+            </TabControl>
+        </Expander>
+        <TextBlock FontFamily="Comic Sans MS" Foreground="Black" Margin="160,20,0,0" HorizontalAlignment="Left" Text="Tìm Người Dùng" VerticalAlignment="Top" Grid.Row="2" Height="17" Width="110" />
+        <TextBox MaxLength="7" Grid.Row="2" Width="250" Margin="275,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Name="txtTimKiem" Height="25" />
+        <Button Name="btntimkiem" Background="#222930" Foreground="#E9E9E9" Margin="600,20,0,0" Height="25" Width="105" Content="Tìm Kiếm" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" RenderTransformOrigin="-0.375,0.56" Click="bnttimkiem" />
+        <DataGrid x:Name="datagrid" SelectionChanged="datagrid_SelectionChanged"  Margin="0,10,0,0" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" CanUserResizeColumns="True" CanUserSortColumns="False" Foreground="Black" FontFamily="Comic Sans MS"  Grid.Row="3" AutoGenerateColumns="False" Background="Gray" Loaded="datagrid_Loaded" Grid.ColumnSpan="4">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Mã Thí Sinh" Width="110" Binding="{Binding MaTS}" Foreground="Black"/>
+                <DataGridTextColumn Header="Tên Đăng Nhập" Width="110" Binding="{Binding TenDangnhap}" Foreground="Black"/>
+                <DataGridTextColumn Header=" Mật Khẩu" Width="110" Binding="{Binding Matkhau}" Foreground="Black"/>
+                <DataGridTextColumn Header="Ngày Sinh" Width="110" Binding="{Binding NgaySinh}" Foreground="Black"/>
+                <DataGridTextColumn Header="Giới Tính" Width="110" Binding="{Binding GioiTinh}" Foreground="Black"/>
+                <DataGridTextColumn Header=" Quyền" Width="110" Binding="{Binding Quyen}" Foreground="Black"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

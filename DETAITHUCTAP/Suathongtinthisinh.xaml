@@ -1,0 +1,54 @@
+﻿<Window x:Class="DETAITHUCTAP.Suathongtinthisinh"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DETAITHUCTAP"
+        mc:Ignorable="d"
+        Title="Suathongtinthisinh" Height="575.532" Width="600"  >
+    <Grid Background="#FFEEF5C0">
+        <Border Margin="0,71,0,76" Background="#FFFFEFEF">
+            <Grid>
+                <TextBox x:Name="txbTenDangNhapSTT"  HorizontalAlignment="Left"  Margin="292,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="153" TextChanged="txbTenDangNhapSTT_TextChanged" Height="37" />
+                <Label Content="Tên đăng nhập:" HorizontalAlignment="Left" Margin="173,63,0,0" VerticalAlignment="Top" Width="108"/>
+                <Label Content="Mật khẩu:" HorizontalAlignment="Left" Margin="173,105,0,0" VerticalAlignment="Top" Width="108" RenderTransformOrigin="0.42,1.871"/>
+
+                <TextBox x:Name="tbMatKhauSTT" HorizontalAlignment="Left" Margin="292,109,0,0" VerticalAlignment="Top" Width="153"/>
+                <PasswordBox x:Name="pbMatKhauSTT" HorizontalAlignment="Left" Margin="292,105,0,0"  Password="" VerticalAlignment="Top" PasswordChanged="PbMatKhauSTT_PasswordChanged" Width="153" Height="29"/>
+                <Image Visibility="Hidden" Height="18" HorizontalAlignment="Left" Name="ImgShowHide" Stretch="Fill" VerticalAlignment="Top" Width="18"
+               MouseLeave="ImgShowHide_MouseLeave" PreviewMouseDown="ImgShowHide_PreviewMouseDown" PreviewMouseUp="ImgShowHide_PreviewMouseUp" Margin="470,67,0,0"/>
+
+                <Label Content="Nhập lại:" HorizontalAlignment="Left" Margin="173,143,0,0" VerticalAlignment="Top" Width="108" Height="41"/>
+
+                <TextBox x:Name="tbNhapLaiSTT" HorizontalAlignment="Left" Margin="292,143,0,0" VerticalAlignment="Top" Width="153" Height="41" />
+                <PasswordBox x:Name="pbNhapLaiSTT" HorizontalAlignment="Left" Margin="292,142,0,0" Password="" VerticalAlignment="Top" PasswordChanged="PbNhapLaiSTT_PasswordChanged" Width="153" Height="42" />
+                <Image Visibility="Hidden" Height="18" HorizontalAlignment="Left" Name="ImgShowHide2" Stretch="Fill" VerticalAlignment="Top" Width="18"
+               MouseLeave="ImgShowHide2_MouseLeave" PreviewMouseDown="ImgShowHide2_PreviewMouseDown" PreviewMouseUp="ImgShowHide2_PreviewMouseUp" Margin="470,109,0,0"/>
+                <Image x:Name="imgHinhAnhSTT" Source="Image/no-avatar.png" HorizontalAlignment="Left" Height="120" Margin="26,64,0,0" VerticalAlignment="Top" Width="120"/>
+                <DatePicker x:Name="dpNgaySinhSTT" HorizontalAlignment="Left" Margin="288,195,0,0" VerticalAlignment="Top" Width="200" Height="38"/>
+                <Label Content="Ngày sinh:" HorizontalAlignment="Left" Margin="173,207,0,0" VerticalAlignment="Top" Width="108"/>
+            </Grid>
+        </Border>
+
+        <Button x:Name="btnSuaSTT" HorizontalAlignment="Left" Margin="114,474,0,0" VerticalAlignment="Top" Click="bntUpdate" Width="126">
+            <Canvas HorizontalAlignment="Center">
+                <Image Source="Image/nopbai.png" Height="30" Width="25" Canvas.Left="-40" Canvas.Top="-14"/>
+                <Label Content="Cập Nhật"  Canvas.Left="-10" Canvas.Top="-14" />
+
+            </Canvas>
+        </Button>
+
+
+
+        <Button x:Name="btnQuayLaiSTT" HorizontalAlignment="Left" Margin="292,474,0,0" VerticalAlignment="Top" Click="BtnQuayLaiSTT_Click" Width="118">
+            <Canvas HorizontalAlignment="Center">
+                <Image Source="Image/back.png" Height="30" Width="25" Canvas.Left="-52" Canvas.Top="-14"/>
+                <Label Content="Quay Lại"  Canvas.Left="-20" Canvas.Top="-14" Width="75"/>
+
+            </Canvas>
+        </Button>
+        <Label Content="Bạn vui lòng cập nhật lại thông tin cho phù hợp!" HorizontalAlignment="Left" Margin="112,14,0,0" VerticalAlignment="Top" FontSize="16" FontStyle="Italic"/>
+
+
+    </Grid>
+</Window>

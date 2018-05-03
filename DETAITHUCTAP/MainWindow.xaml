@@ -1,0 +1,81 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DETAITHUCTAP"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="DETAITHUCTAP.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow"   WindowState="Maximized" WindowStartupLocation="CenterScreen" Width="1200" Height="1200" HorizontalContentAlignment="Stretch">
+    <Window.ContextMenu>
+        <ContextMenu/>
+    </Window.ContextMenu>
+    <Grid>
+
+        <StackPanel VerticalAlignment="Top">
+            <Grid VerticalAlignment="Top" Height="108" Margin="206,0,0,0" Background="Gray">
+                <TextBlock Text="ỨNG DỤNG QUẢN LÝ THI LÁI XE" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right" Height="50" Margin="0,14,0,0">
+                    <TextBlock x:Name="txtName" Text="Tên Đăng Nhập" VerticalAlignment="Center" Width="120"/>
+                    <TextBlock x:Name="txtquyen" Text="Chức Vụ" VerticalAlignment="Center" Width="120"/>
+                    <materialDesign:PopupBox HorizontalAlignment="Right" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" VerticalAlignment="Center" RenderTransformOrigin="0.471,0.231" Height="38" Margin="0,0,0,12">
+                        <StackPanel>
+                            <Button Content="Đăng Xuất" Click="bntdangxuat"  />
+
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <DockPanel HorizontalAlignment="Stretch" 
+           VerticalAlignment="Stretch" 
+           ClipToBounds="True">
+
+            <StackPanel Width="205">
+                <Grid Height="236">
+                    <Image Source="Image/hinh04.jpg" Margin="0,0,0,56"/>
+
+                </Grid>
+                <Menu FontFamily="Times New Roman" FontSize="12" Height="933" HorizontalAlignment="Left" Width="203">
+                    <MenuItem Header="Trang Chủ" FontSize="12"  Width="147"  />
+                    <MenuItem Header="Danh Mục" Width="147" Height="63" >
+                        <MenuItem Header="Người Dùng" />
+                        <MenuItem Header="_Đề Thi"  Height="22" Click="click_chuanbithi"   />
+                    </MenuItem>
+                    <MenuItem Header="Nghiệp Vụ" Width="147" Height="63" >
+                        <MenuItem Header="Quản Lý Người Dùng" Click="quanlynguoidung"  />
+                        <MenuItem Header="Quản Lý Đề Thi"  Height="22" HorizontalAlignment="Left" Width="154" Click="quanlycauhoi" />
+                    </MenuItem>
+
+
+
+                    <MenuItem Header="Báo Cáo" Width="147" Height="59" >
+                        <MenuItem Header="_Kết Qủa Đợi Thi"/>
+                    </MenuItem>
+                    <MenuItem Header="Thoát" Width="147" Click="exit" Height="58" />
+
+
+                </Menu>
+            </StackPanel>
+            <StackPanel Margin="0,94,0,10" Width="1200">
+                <Image Source="Image/hinh03.jpg" Height="951" Width="1200" />
+                <!--<Grid Height="1067">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="447*"/>
+                        <RowDefinition Height="620*"/>
+                        <RowDefinition Height="0*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="Image/trung" Margin="0,-106,0,0" HorizontalAlignment="Right" Width="974" Height="548" VerticalAlignment="Top"/>
+                    <Image Source="Image/trung1" HorizontalAlignment="Right" Width="343" Margin="0,438,631,11" Grid.RowSpan="2"/>
+                    <Image Source="Image/trung2" HorizontalAlignment="Right" Width="301" Margin="0,2,325,6" Grid.Row="1"/>
+                    <Image Source="Image/trung3" HorizontalAlignment="Right" Width="325" Margin="0,7,0,6" Grid.Row="1"/>
+
+
+                </Grid>-->
+
+            </StackPanel>
+
+        </DockPanel>
+    </Grid>
+</Window>

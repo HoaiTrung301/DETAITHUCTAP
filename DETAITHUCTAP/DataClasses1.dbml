@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLTLX" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-ORI3L9R\TRUNG;Initial Catalog=QLTLX;Persist Security Info=True;User ID=sa" SettingsObjectName="DETAITHUCTAP.Properties.Settings" SettingsPropertyName="QLTLXConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Dethi" Member="Dethis">
+    <Type Name="Dethi">
+      <Column Name="madethi" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maloaicauhoi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="macauhoi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Dethi_Dotthi" Member="Dotthis" ThisKey="madethi" OtherKey="madethi" Type="Dotthi" />
+      <Association Name="tbCAUHOI_Dethi" Member="tbCAUHOI" ThisKey="macauhoi" OtherKey="macauhoi" Type="tbCAUHOI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dotthi" Member="Dotthis">
+    <Type Name="Dotthi">
+      <Column Name="madoithi" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="madethi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Dotthi_tbBaitraloi" Member="tbBaitralois" ThisKey="madoithi" OtherKey="madoithi" Type="tbBaitraloi" />
+      <Association Name="Dethi_Dotthi" Member="Dethi" ThisKey="madethi" OtherKey="madethi" Type="Dethi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TaiKhoanDN" Member="TaiKhoanDNs">
+    <Type Name="TaiKhoanDN">
+      <Column Name="MaTS" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenDangnhap" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Quyen" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Association Name="TaiKhoanDN_tbBaitraloi" Member="tbBaitralois" ThisKey="MaTS" OtherKey="MaTS" Type="tbBaitraloi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbBaitraloi" Member="tbBaitralois">
+    <Type Name="tbBaitraloi">
+      <Column Name="MaTS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="macauhoi" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="madoithi" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="cautraloi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDtraloi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Chamcau" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Socaudung" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Ketqua" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="Dotthi_tbBaitraloi" Member="Dotthi" ThisKey="madoithi" OtherKey="madoithi" Type="Dotthi" IsForeignKey="true" />
+      <Association Name="TaiKhoanDN_tbBaitraloi" Member="TaiKhoanDN" ThisKey="MaTS" OtherKey="MaTS" Type="TaiKhoanDN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbCAUHOI" Member="tbCAUHOIs">
+    <Type Name="tbCAUHOI">
+      <Column Name="macauhoi" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cauhoi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[cau a]" Member="cau_a" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[cau b]" Member="cau_b" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[cau c]" Member="cau_c" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="[cau d]" Member="cau_d" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dapan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="maloaicauhoi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="tbCAUHOI_Dethi" Member="Dethis" ThisKey="macauhoi" OtherKey="macauhoi" Type="Dethi" />
+    </Type>
+  </Table>
+</Database>

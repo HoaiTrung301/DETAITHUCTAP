@@ -1,0 +1,120 @@
+﻿<Window x:Class="DETAITHUCTAP.thi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DETAITHUCTAP"
+        mc:Ignorable="d"
+        Title="thi" WindowState="Maximized" WindowStartupLocation="CenterScreen" Width="1200" Height="753.52" >
+    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFFEFFEC" Height="705" Margin="10,10,2,0" Width="1180">
+        <Grid Height="707" Width="1173" RenderTransformOrigin="0.5,0.5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="197*"/>
+                <ColumnDefinition Width="194*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="74*"/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.075"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+
+            <GroupBox  HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="452" RenderTransformOrigin="0.5,0.5" Header="Thông tin Người Thi">
+                <Grid Background="#FFEFFFE7" Margin="0,-9,0,-10" Width="432">
+                    <Label Content="Đợi Thi" HorizontalAlignment="Left" Margin="115,36,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Label Content="Họ tên:" HorizontalAlignment="Left" Margin="115,-1,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Image x:Name="imgHinhAnhTTNC" HorizontalAlignment="Left" Height="90" Margin="12,10,0,0" VerticalAlignment="Top" Width="90" Source="Image/no-avatar.png"/>
+                    <TextBlock x:Name="txtdoithi" Text="..." HorizontalAlignment="Left" Margin="245,47,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Width="146" Height="26"/>
+                    <Label x:Name="lbNgaySinhTTNC"  HorizontalAlignment="Left" Margin="255,108,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold"/>
+                    <TextBlock x:Name="lbHoTenTTNC" Text="..."  HorizontalAlignment="Left" Margin="255,5,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Width="156" Height="31"/>
+                    <Label Content="Mã Thí Sinh" HorizontalAlignment="Left" Margin="107,73,0,0" VerticalAlignment="Top" FontSize="20" Width="122"/>
+                    <TextBlock x:Name="txtmathisinh" Text="..." HorizontalAlignment="Left" Margin="255,77,0,0" VerticalAlignment="Top" Foreground="Red" FontWeight="Bold" Width="156" Height="26"/>
+                </Grid>
+
+            </GroupBox>
+
+
+            <Grid Margin="162,42,95,508" HorizontalAlignment="Center" VerticalAlignment="Center" Width="325" Height="157" Background="#FFFFF9F9" Grid.Column="1" Grid.RowSpan="2">
+
+                <TextBlock x:Name="txtngaythi" VerticalAlignment="Top" FontSize="20" Margin="10,0,0,0"/>
+                <TextBlock x:Name="lbPhut" Text="30 giây" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Background="{x:Null}" Foreground="#FFFF0808" Margin="135,0,0,0" Height="37" RenderTransformOrigin="-1.213,0.472" Width="80"/>
+                <ProgressBar x:Name="pbThoiGianGDT" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="334" Margin="10,42,0,0"/>
+
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="62,87,64,-6" Height="76" Width="199">
+
+
+                    <Button x:Name="btnBackGDT"   VerticalAlignment="Top" Height="60" Width="Auto" Background="White" HorizontalAlignment="Left" Click="bntback">
+                        <Grid>
+                            <Image Source="Image/back.png"/>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="btnNextGDT"   Click="btnNextGDT_Click" VerticalAlignment="Top" Height="60" Width="Auto"  Background="White"  >
+                        <Grid>
+                            <Image Source="Image/next.png"/>
+                        </Grid>
+                    </Button>
+                </WrapPanel>
+                <Label Content="Thời gian:" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" Margin="10,0,0,0"/>
+
+            </Grid>
+
+            <GroupBox x:Name="gbNoiDungCauHoi" Header="Nội dung câu hỏi" HorizontalAlignment="Left" Margin="0,48,0,0" Width="1170" Grid.ColumnSpan="2" Height="470" VerticalAlignment="Top" Grid.Row="1">
+                <Grid Background="#FFF1F1F1" Margin="0,10,0,-18" Width="1119">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="456*"/>
+                        <ColumnDefinition Width="521*"/>
+                        <ColumnDefinition Width="0*"/>
+                        <ColumnDefinition Width="142*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="lbCauHoiGDT" Text="                              " HorizontalAlignment="Left" Margin="136,4,0,0" VerticalAlignment="Top" Width="831" Height="136" Background="#FFFFF9F9" FontSize="20" Foreground="#FF0303FF" Grid.ColumnSpan="2"/>
+                    <RadioButton x:Name="rbA" Content="" HorizontalAlignment="Left" Margin="61,182,0,0" VerticalAlignment="Top" Height="35" Width="35" GroupName="CH"   />
+                    <RadioButton x:Name="rbB" Content="" HorizontalAlignment="Left" Margin="61,280,0,0" VerticalAlignment="Top" Height="25" Width="30" GroupName="CH" RenderTransformOrigin="0.595,-2.625"  />
+                    <RadioButton x:Name="rbC" Content="" HorizontalAlignment="Left" Margin="139,182,0,0" VerticalAlignment="Top" Height="24" Width="29" GroupName="CH" FontSize="10" Grid.Column="1"  />
+                    <RadioButton x:Name="rbD" Content="" HorizontalAlignment="Left" Margin="137,297,0,0" VerticalAlignment="Top" Height="25" Width="29"  GroupName="CH" Grid.Column="1" RenderTransformOrigin="0.563,-2.537"  />
+
+                    <RadioButton Visibility="Hidden" x:Name="rbT" Content="" HorizontalAlignment="Left" Margin="137,297,0,0" VerticalAlignment="Top" Height="25" Width="29"  GroupName="CH" Grid.Column="1" RenderTransformOrigin="0.563,-2.537"  />
+                    <Label Content="A" HorizontalAlignment="Left" Margin="30,166,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="51" Width="33"/>
+                    <Label Content="C" HorizontalAlignment="Left" Margin="103,160,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="51" Width="31" RenderTransformOrigin="1.926,0.542" Grid.Column="1"/>
+                    <Label Content="D" HorizontalAlignment="Left" Margin="103,280,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="51" Width="34" Grid.Column="1" RenderTransformOrigin="0.437,-1.157"/>
+                    <Label Content="B" HorizontalAlignment="Left" Margin="28,271,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="51" Width="31"/>
+                    <TextBlock x:Name="lbA" HorizontalAlignment="Left" Margin="101,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="77" RenderTransformOrigin="0.248,0.518" Background="#FFF8F6FF" FontSize="14" Foreground="#FFFF24E1"/>
+                    <TextBlock x:Name="lbC" HorizontalAlignment="Left" Margin="206,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="77" RenderTransformOrigin="0.248,0.518" Background="#FFF8F6FF" FontSize="14" Foreground="#FFF723DA" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBlock x:Name="lbD" HorizontalAlignment="Left" Margin="206,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="78" RenderTransformOrigin="0.248,0.518" Background="#FFF8F6FF" FontSize="14" Foreground="#FFF029D5" Grid.Column="1" Grid.ColumnSpan="3"/>
+                    <TextBlock x:Name="lbB" HorizontalAlignment="Left" Margin="96,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Height="77" RenderTransformOrigin="0.248,0.518" Background="#FFF8F6FF" FontSize="14" Foreground="#FFF326D7"/>
+                    <TextBlock x:Name="txtloaide" HorizontalAlignment="Left" Margin="28,26,0,0" TextWrapping="Wrap" Text="Loại Đề Thi" VerticalAlignment="Top" Height="39" Width="146"/>
+                    <Label x:Name="Cau" Content="Câu đúng có màu :" HorizontalAlignment="Left" Margin="21,70,0,0" VerticalAlignment="Top" Height="26" Width="110"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="30,101,0,0" TextWrapping="Wrap" Background="Red" VerticalAlignment="Top" RenderTransformOrigin="-1.016,2.971" Width="101" Height="16"/>
+
+                </Grid>
+            </GroupBox>
+
+
+            <Button x:Name="btnNopBaiGDT" HorizontalAlignment="Left" Margin="422,448,0,0" VerticalAlignment="Top" Height="38" Width="120" Grid.Row="1" Click="bntnopbai" >
+                <WrapPanel HorizontalAlignment="Left">
+                    <Image Source="Image\nopbai.png" Height="27" Width="20" />
+                    <Label Content="NỘP BÀI" FontWeight="Bold" />
+                </WrapPanel>
+            </Button>
+            <Button x:Name="btnChoiLaiGDT" HorizontalAlignment="Left" Margin="37,448,0,0" VerticalAlignment="Top" Height="38" Width="150" Click="bntthilai" Grid.Row="1" Grid.Column="1" >
+                <WrapPanel HorizontalAlignment="Left">
+                    <Image Source="Image/choilai.png" Height="27" Width="24" />
+                    <Label Content="THI LẠI" FontWeight="Bold" />
+                </WrapPanel>
+            </Button>
+            <Button x:Name="bntbatdau" Click="bntbatdau1" Content="Bắt Đầu" HorizontalAlignment="Left" Margin="497,67,0,0" VerticalAlignment="Top" Width="160" Height="69" RenderTransformOrigin="0.713,-0.239" Grid.ColumnSpan="2"  />
+            <Button x:Name="bntxuatexcel" Content="Xuất EXcel" Grid.Column="1" HorizontalAlignment="Left" Margin="209,10,0,0" VerticalAlignment="Top" Width="134" Grid.Row="1" Click="bntxuatexcel01"/>
+            <Button x:Name="bntxemketqua" Grid.ColumnSpan="2" Content="Xem Kết Qủa" HorizontalAlignment="Left" Margin="497,153,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="160" Height="47"/>
+
+
+
+
+        </Grid>
+
+    </WrapPanel>
+</Window>
